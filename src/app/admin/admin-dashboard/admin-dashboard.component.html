@@ -1,0 +1,38 @@
+
+<!-- <button class="btn btn-primary">Generate Creadential Of Recruiter</button> -->
+<label class="">Generate Creadential Of Recruiter</label>
+<form [formGroup]="form" class="tab-pane active"  id="sign-candidate"  >
+    <div class="row" >
+
+        <div class="col-lg-12">
+            <div class="form-group mb-3">
+                <input formControlName="name" name="name" type="text" required="" class="form-control" placeholder="Full Name*">
+            </div>
+        </div>
+        
+        <div class="col-lg-12">
+            <div class="form-group mb-3">
+                <input  formControlName="email" name="email" type="email" class="form-control" required="" placeholder="email*">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="form-group mb-3">
+                <input  formControlName="password" name="password" type="password" class="form-control" required="" placeholder="Password*">
+            </div>
+        </div>
+        <div class="col-lg-12" >
+            <select class="form-control mb-3" formControlName="collegeId" >
+                <option value="" disabled selected >Select your College*</option>
+                <option [value]="data.id"  *ngFor="let data of CollegeList">
+                    {{data.collegeName}}
+                    <!-- {{data.id}} -->
+                </option>
+            </select>
+        </div>
+        
+        <div class="col-md-12">
+            <button type="submit" class="site-button" (click)="RegisterSubmit()">Sign Up</button>
+        </div>
+        
+    </div>
+</form>
