@@ -94,6 +94,7 @@ export class HomePageComponent implements OnInit {
     }).subscribe((res:any)=>{      
       this.toast.success({detail:"Login Succesful",summary:"",duration:5000})
       localStorage.setItem("user_id",res.data.id)
+      localStorage.setItem("user_name",res.data.name)
       this.router.navigate(['candidate-dashboard']).then(()=>
       {
         this.toast.success({detail:"Logout Succesful",summary:"",duration:5000})        

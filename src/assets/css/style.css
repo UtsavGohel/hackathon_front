@@ -14415,4 +14415,8 @@ strong {
   padding: 0;
   background: none;
 }
+.ngx-pagination .current{
+  background: #d4e6ff !important;
+  color: black !important;
+}
 /*# sourceMappingURL=style.css.map */

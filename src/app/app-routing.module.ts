@@ -14,7 +14,12 @@ import { PostJobComponent } from './Recruiter/post-job/post-job.component';
 import { ProfileComponent } from './Recruiter/profile/profile.component';
 import { RecruiterDashboardComponent } from './Recruiter/recruiter-dashboard/recruiter-dashboard.component';
 import { ProfessorDataComponent } from './Recruiter/professor-data/professor-data.component';
-
+import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.component';
+import { ListOfJobComponent } from './candidate/list-of-job/list-of-job.component';
+import { UserProfileComponent } from './candidate/user-profile/user-profile.component';
+import { UserLogoutComponent } from './candidate/user-logout/user-logout.component';
+import { UserDeleteProfileComponent } from './candidate/user-delete-profile/user-delete-profile.component';
+import { UserChangePasswordComponent } from './candidate/user-change-password/user-change-password.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/homepage',pathMatch:'full'},
@@ -32,6 +37,13 @@ const routes: Routes = [
   {path:'post-job',component:PostJobComponent},
   {path:'message',component:MessageComponent},
   {path:'professor-data',component:ProfessorDataComponent},
+  {path:'appliedJob',component:ApplyforJobComponent},
+  {path:'ListOfJobs',component:ListOfJobComponent},
+  {path:'user-profile',component:UserProfileComponent},
+  {path:'user-logout',component:UserLogoutComponent},
+  {path:'user-delete',component:UserDeleteProfileComponent},
+  {path:'user-change-password',component:ChangePasswordComponent},
+
 
 
 ];

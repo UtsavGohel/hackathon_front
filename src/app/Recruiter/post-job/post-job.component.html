@@ -269,7 +269,7 @@
             <div class="content-admin-main">
 
             	<div class="wt-admin-right-page-header clearfix">
-                    <h2>Post a Job</h2>
+                    <h2>{{jobId ? 'Edit a Job' : 'Post a Job' }}</h2>
                     <div class="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Job Submission Form</span></div>
                 </div>
 
@@ -432,7 +432,7 @@
                                     
                                     <div class="col-lg-12 col-md-12">                                   
                                         <div class="text-left">
-                                            <button type="submit" class="site-button m-r5" (click)="applyJob()">Publish Job</button>                                            
+                                            <button type="submit" class="site-button m-r5" (click)="applyJob()">{{jobId ? 'Update Job' : 'Publish Job' }}</button>                                            
                                         </div>
                                     </div> 
 

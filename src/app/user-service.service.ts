@@ -5,15 +5,29 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserServiceService {
+  userid:any;
+  userName:any;
+  userdata:any;
 
-  constructor(private router: Router,public service:UserServiceService) { }
+  constructor(private router: Router) { }
+ 
   onDashboard() {
-    this.router.navigate(['recruiter-dashboard']).then(() => {
+    this.router.navigate(['candidate-dashboard']).then(() => {
       window.location.reload()
     })
   }
   ListOfJobs() {
-    this.router.navigate(['message']).then(() => {
+    this.router.navigate(['ListOfJobs']).then(() => {
+      window.location.reload()
+    })
+  }
+  appliedJob() {
+    this.router.navigate(['appliedJob']).then(() => {
+      window.location.reload()
+    })
+  }
+  onLogout(){
+    this.router.navigate(['']).then(() => {
       window.location.reload()
     })
   }

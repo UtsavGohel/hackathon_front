@@ -26,7 +26,15 @@ export class ServiceService {
   postJob(data: any){
     return this.http.post('http://localhost:3000/jobDetails', data);
   }
+
+  updateJob(data: any){
+    return this.http.put('http://localhost:3000/jobDetails', data);
+  }
   
+  deleteJob(jobId:any){
+    return this.http.delete('http://localhost:3000/deleteJob/'+jobId);
+  }
+
   getJobList(recId: any){
     return this.http.get('http://localhost:3000/get_jobs/'+ recId);
   }
@@ -50,7 +58,10 @@ export class ServiceService {
   getCandidateList(recId:any){
     return this.http.get('http://localhost:3000/getCandidateList/'+ recId);
   }
-  
-  
-  
+  getJobDetails(jobId:any){
+    return this.http.get('http://localhost:3000/job_details/'+ jobId);
+  }
+  getJobApplicationById(jobId:any){
+    return this.http.get('http://localhost:3000/getApplications/'+ jobId);
+  }
 }

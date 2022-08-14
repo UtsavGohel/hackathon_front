@@ -21,7 +21,12 @@ import { MessageComponent } from './Recruiter/message/message.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfessorDataComponent } from './Recruiter/professor-data/professor-data.component';
 import { ListOfJobComponent } from './candidate/list-of-job/list-of-job.component';
-import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.component'; // <-- import the module
+import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.component';
+
+import { UserProfileComponent } from './candidate/user-profile/user-profile.component';
+import { UserChangePasswordComponent } from './candidate/user-change-password/user-change-password.component';
+import { UserDeleteProfileComponent } from './candidate/user-delete-profile/user-delete-profile.component';
+import { UserLogoutComponent } from './candidate/user-logout/user-logout.component'; // <-- import the module
 
 
 
@@ -44,6 +49,11 @@ import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.comp
     ProfessorDataComponent,
     ListOfJobComponent,
     ApplyforJobComponent,
+    
+    UserProfileComponent,
+    UserChangePasswordComponent,
+    UserDeleteProfileComponent,
+    UserLogoutComponent,
   ],
   imports: [
     BrowserModule,

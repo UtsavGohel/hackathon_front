@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { ServiceService } from 'src/app/service.service';
 
@@ -12,20 +12,38 @@ export class AppliedCandidateComponent implements OnInit {
 
   p: number = 1;
   public userId:any = localStorage.getItem('rec_id');
+  public jobId:any;
+  public jobName:any;
   public candidateList:any =[];
 
-  constructor(private router:Router, public service:AppService, private httpService:ServiceService) { }
+  constructor(private route: ActivatedRoute,private router:Router, public service:AppService, private httpService:ServiceService) { }
 
   ngOnInit(): void {
+    this.jobId = this.route.snapshot.paramMap.get('jobId');
+    if(this.jobId){
+      this.httpService.getJobDetails(this.jobId).subscribe((res:any)=>{
+        this.jobName =  res.jobTitle;
+      })
+      this.httpService.getJobApplicationById(this.jobId).subscribe((res:any)=>{
+        this.candidateList = res;
+        this.candidateList.forEach((element:any) => {
+          this.httpService.getStatusById(element.statusId).subscribe((res:any)=>{          
+            element['status'] = res.name;
+          })
+        });
+      })
+    }else{
 
-    this.httpService.getCandidateList(this.userId).subscribe((res:any)=>{
-      this.candidateList = res;
-      this.candidateList.forEach((element:any) => {
-        this.httpService.getStatusById(element.statusId).subscribe((res:any)=>{          
-          element['status'] = res.name;
-        })
-      });
-    })
+      this.httpService.getCandidateList(this.userId).subscribe((res:any)=>{
+        this.candidateList = res;
+        this.candidateList.forEach((element:any) => {
+          this.httpService.getStatusById(element.statusId).subscribe((res:any)=>{          
+            element['status'] = res.name;
+          })
+        });
+      })
+    }
+
   }
   
 }

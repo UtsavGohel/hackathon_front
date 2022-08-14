@@ -309,7 +309,7 @@
                                         </td>
                                         <td>{{data.stream}}</td>
                                         <td><div class="twm-jobs-category"><span [ngClass]="{'twm-bg-purple': data.jobType == 'Part Time', 'twm-bg-golden' : data.jobType == 'Full Time' }">{{data.jobType}}</span></div></td>
-                                        <td><a href="javascript:;" class="site-text-primary">{{data.count}} Applied</a></td>
+                                        <td><a class="site-text-primary" (click)="goTocandidateList(data.id)">{{data.count}} Applied</a></td>
                                         <td>
                                             <div>08/06/2022</div>
                                             <div>28/06/2022</div>
@@ -324,15 +324,32 @@
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <button title="Edit">
+                                                        <button title="Edit" (click)="editJob(data.id)">
                                                             <span class="far fa-edit"></span>
                                                         </button>
                                                     </li>
                                                     <li>
-                                                        <button title="Delete">
+                                                        <button title="Delete" data-bs-toggle="modal" data-bs-target="#delete-job">
                                                             <span class="far fa-trash-alt"></span>
                                                         </button>
                                                     </li>
+                                                    <div class="modal fade twm-model-popup" id="delete-job" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h4 class="modal-title">Do you want to delete job {{data.jobTitle}}?</h4>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="site-button" data-bs-dismiss="modal">No</button>
+                                                                <button type="button" class="site-button outline-primary" (click)="deleteJob(data.id)">Yes</button>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Delete Job Popup-->
                                                 </ul>
                                             </div>
                                         </td>
@@ -366,8 +383,7 @@
             </div>
             </div>
         </div>
-
-
+        
         <!--Logout Profile Popup-->
         <div class="modal fade twm-model-popup" id="logout-dash-profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
             <div class="modal-dialog">

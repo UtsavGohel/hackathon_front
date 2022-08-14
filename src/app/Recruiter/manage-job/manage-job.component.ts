@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/app.service';
 import { ServiceService } from 'src/app/service.service';
-
+import { NgToastService } from 'ng-angular-popup';
 @Component({
   selector: 'app-manage-job',
   templateUrl: './manage-job.component.html',
@@ -14,7 +14,7 @@ export class ManageJobComponent implements OnInit {
   public userId:any = localStorage.getItem('rec_id');
   public jobList:any =[];
 
-  constructor(private router:Router, public service:AppService, private httpService:ServiceService) { }
+  constructor(private router:Router, public service:AppService, private httpService:ServiceService, private toast:NgToastService) { }
 
   ngOnInit(): void {
     this.httpService.getJobList(this.userId).subscribe((res:any) =>{
@@ -31,5 +31,22 @@ export class ManageJobComponent implements OnInit {
         })
       });
     })    
-  }  
+  }
+  
+  editJob(jobId:any){
+    this.router.navigate(['post-job', {jobId: jobId}])
+  }
+  
+  deleteJob(jobId:any){    
+    this.httpService.deleteJob(jobId).subscribe((res:any) =>{
+      this.toast.success({detail:"Removed Job Successfully",summary:"",duration:5000})
+      setTimeout(() => {      
+        this.service.onManagejob()
+      }, 300);
+    })
+  }
+  
+  goTocandidateList(jobId:any){
+    this.router.navigate(['applied-candidate', {jobId: jobId}])
+  }
 }
