@@ -180,7 +180,7 @@
                                                 <ul>
                                                     <li><a><button (click)="this.service.onDashboard()" class="unstyled-button" ><i class="fa fa-home"></i>Dashboard</button></a></li>
                                                     <li><a><button (click)="this.service.onMessage()" class="unstyled-button" ><i class="fa fa-envelope"></i> Messages</button></a></li>
-                                                    <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li>
+                                                    <!-- <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li> -->
                                                     <li><a><button (click)="this.service.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li>
                                                     
                                                 </ul>
@@ -223,6 +223,9 @@
                     <li>
                         <a (click)="this.service.onComapanyProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">College Profile</span></a>
                     </li>
+                    <li>
+                        <a (click)="this.service.onProfessorDetails()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Professor Details</span></a>
+                    </li>
 
                     <li>
                     	<!-- <a href="javascript:;"><i class="fa fa-suitcase"></i><span class="admin-nav-text">Jobs</span></a> -->
@@ -246,7 +249,7 @@
                         <!-- </ul> -->
                     </li>
                     <li>
-                        <a (click)="this.service.onProfile()" role="button"><i class="fa fa-user"></i><span class="admin-nav-text">My Profile</span></a>
+                        <!-- <a (click)="this.service.onProfile()" role="button"><i class="fa fa-user"></i><span class="admin-nav-text">My Profile</span></a> -->
                     </li>
 
                     <li>
@@ -305,7 +308,7 @@
                                             </div>
                                         </td>
                                         <td>{{data.stream}}</td>
-                                        <td><div class="twm-jobs-category"><span class="twm-bg-green">{{data.jobType}}</span></div></td>
+                                        <td><div class="twm-jobs-category"><span [ngClass]="{'twm-bg-purple': data.jobType == 'Part Time', 'twm-bg-golden' : data.jobType == 'Full Time' }">{{data.jobType}}</span></div></td>
                                         <td><a href="javascript:;" class="site-text-primary">{{data.count}} Applied</a></td>
                                         <td>
                                             <div>08/06/2022</div>

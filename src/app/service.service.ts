@@ -50,4 +50,7 @@ export class ServiceService {
   getCandidateList(recId:any){
     return this.http.get('http://localhost:3000/getCandidateList/'+ recId);
   }
+  
+  
+  
 }

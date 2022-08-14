@@ -31,6 +31,11 @@ export class AppService {
       window.location.reload()
     })
   }
+  onProfessorDetails(){
+    this.router.navigate(['professor-data']).then(() => {
+      window.location.reload()
+    })
+  }
   onLogout() {
     this.router.navigate(['homepage']).then(() => {
       window.location.reload()
@@ -61,4 +66,6 @@ export class AppService {
       window.location.reload()
     })
   }
+  
+  
 }

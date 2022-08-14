@@ -121,6 +121,7 @@ export class HomePageComponent implements OnInit {
       this.toast.success({detail:"Login Succesful",summary:"",duration:5000})
       localStorage.setItem("rec_id",res.data.id)
       localStorage.setItem("rec_name",res.data.name)
+      localStorage.setItem("college_id",res.data.collegeId)
       this.router.navigate(['recruiter-dashboard']).then(()=>
       {        
         window.location.reload()

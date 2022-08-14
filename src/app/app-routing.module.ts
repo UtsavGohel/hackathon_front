@@ -13,6 +13,7 @@ import { MessageComponent } from './Recruiter/message/message.component';
 import { PostJobComponent } from './Recruiter/post-job/post-job.component';
 import { ProfileComponent } from './Recruiter/profile/profile.component';
 import { RecruiterDashboardComponent } from './Recruiter/recruiter-dashboard/recruiter-dashboard.component';
+import { ProfessorDataComponent } from './Recruiter/professor-data/professor-data.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'manage-job',component:ManageJobComponent},
   {path:'post-job',component:PostJobComponent},
   {path:'message',component:MessageComponent},
+  {path:'professor-data',component:ProfessorDataComponent},
 
 
 ];
