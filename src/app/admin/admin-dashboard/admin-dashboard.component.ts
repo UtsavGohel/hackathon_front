@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AdminServiceService } from 'src/app/admin-service.service';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -12,7 +14,7 @@ export class AdminDashboardComponent implements OnInit {
   form: FormGroup
   CollegeList: any;
   StreamList: any;
-  constructor() { }
+  constructor(private router:Router,public adminService:AdminServiceService) { }
   // onClickOpenForm(){
   //   this.openform=true;  
   //   }
@@ -27,6 +29,8 @@ export class AdminDashboardComponent implements OnInit {
   RegisterSubmit(){
 
   }
+
+  
   
 
 }

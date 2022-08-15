@@ -20,6 +20,9 @@ import { UserProfileComponent } from './candidate/user-profile/user-profile.comp
 import { UserLogoutComponent } from './candidate/user-logout/user-logout.component';
 import { UserDeleteProfileComponent } from './candidate/user-delete-profile/user-delete-profile.component';
 import { UserChangePasswordComponent } from './candidate/user-change-password/user-change-password.component';
+import { GenerateCredentialsComponent } from './admin/generate-credentials/generate-credentials.component';
+import { ManageRecruiterComponent } from './admin/manage-recruiter/manage-recruiter.component';
+import { AddCollegeComponent } from './admin/add-college/add-college.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/homepage',pathMatch:'full'},
@@ -43,6 +46,9 @@ const routes: Routes = [
   {path:'user-logout',component:UserLogoutComponent},
   {path:'user-delete',component:UserDeleteProfileComponent},
   {path:'user-change-password',component:ChangePasswordComponent},
+  {path:'generate-credential',component:GenerateCredentialsComponent},
+  {path:'manage-recruiter',component:ManageRecruiterComponent},
+  {path:'add-college',component:AddCollegeComponent},
 
 
 

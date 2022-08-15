@@ -89,7 +89,7 @@ export class HomePageComponent implements OnInit {
  }
   }
   RegisterSubmit(){
-    if(this.contentEditable==true){
+    // if(this.contentEditable==true){
       this.http.post('http://localhost:3000/user_register',this.form.getRawValue(),{responseType: 'text'})
       .subscribe((res)=>{
         this.toast.success({detail:"Registration Succesfull",summary:"",duration:5000})
@@ -101,9 +101,10 @@ export class HomePageComponent implements OnInit {
         this.toast.error({detail:"Fill All The Details",summary:"Try Again",duration:5000})
         console.log(err);
       }) 
-    }else{
-      this.toast.success({detail:"Please Accept The Terms And Condition",summary:"",duration:5000})
-    }
+    // }
+    // else{
+    //   this.toast.success({detail:"Please Accept The Terms And Condition",summary:"",duration:5000})
+    // }
 
   }
   CandidateLogin(){

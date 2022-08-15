@@ -26,7 +26,10 @@ import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.comp
 import { UserProfileComponent } from './candidate/user-profile/user-profile.component';
 import { UserChangePasswordComponent } from './candidate/user-change-password/user-change-password.component';
 import { UserDeleteProfileComponent } from './candidate/user-delete-profile/user-delete-profile.component';
-import { UserLogoutComponent } from './candidate/user-logout/user-logout.component'; // <-- import the module
+import { UserLogoutComponent } from './candidate/user-logout/user-logout.component';
+import { GenerateCredentialsComponent } from './admin/generate-credentials/generate-credentials.component';
+import { ManageRecruiterComponent } from './admin/manage-recruiter/manage-recruiter.component';
+import { AddCollegeComponent } from './admin/add-college/add-college.component'; // <-- import the module
 
 
 
@@ -54,6 +57,9 @@ import { UserLogoutComponent } from './candidate/user-logout/user-logout.compone
     UserChangePasswordComponent,
     UserDeleteProfileComponent,
     UserLogoutComponent,
+    GenerateCredentialsComponent,
+    ManageRecruiterComponent,
+    AddCollegeComponent,
   ],
   imports: [
     BrowserModule,

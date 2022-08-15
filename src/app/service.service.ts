@@ -64,4 +64,19 @@ export class ServiceService {
   getJobApplicationById(jobId:any){
     return this.http.get('http://localhost:3000/getApplications/'+ jobId);
   }
+  addClgData(data:any){
+    return this.http.post('http://localhost:3000/clgData', data);
+  }
+  getClgData(clgId:any){
+    return this.http.get('http://localhost:3000/clgData/'+ clgId);
+  }
+  editClgData(data:any){
+    return this.http.put('http://localhost:3000/clgData', data);
+  }
+  getRecruiterById(recId:any){
+    return this.http.get('http://localhost:3000/recruiter_details/'+recId)
+  }
+  updateRecruiter(data:any){
+    return this.http.patch('http://localhost:3000/recruiterUpdate', data)
+  }
 }

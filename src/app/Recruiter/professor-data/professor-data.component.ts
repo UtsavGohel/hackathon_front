@@ -14,11 +14,19 @@ export class ProfessorDataComponent implements OnInit {
 
   constructor(private router:Router, public service:AppService, private http:HttpClient, private toast:NgToastService) { }
   professorData:any;
-  collegeId:any = localStorage.getItem('college_id')
+  collegeId:any = localStorage.getItem('college_id');
+  public d:any;
+
   ngOnInit(): void {
     this.http.get('http://localhost:3000/AllProfessor/'+this.collegeId).subscribe((data)=>{
       this.professorData = data;
-      console.log(data);
+      this.professorData.forEach((element:any) => {
+        element.DOB = element.DOB.substring(0, 10);
+        this.d = new Date(element['DOB']);
+        this.d.setFullYear(this.d.getUTCFullYear() + 60);
+        this.d = this.d.toISOString().substring(0, 10);
+        element.retirementDate = this.d;
+      });
       
     },(err)=>{
       console.log(err);
