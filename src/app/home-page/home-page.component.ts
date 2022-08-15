@@ -20,6 +20,10 @@ export class HomePageComponent implements OnInit {
   formLoginRecruiter: FormGroup;
   CollegeList: any;
   StreamList: any;
+  userid:any;
+  userName:any;
+  userdata:any;
+  JobData:any;
   
   constructor(private location: LocationStrategy, private http:HttpClient,private router:Router,private toast:NgToastService,private service:ServiceService) {
     // preventing back button in browser implemented by "Samba Siva"  
@@ -30,6 +34,20 @@ export class HomePageComponent implements OnInit {
     }
 
   ngOnInit(): void {
+
+    this.userid = localStorage.getItem('user_id')    
+    this.userName = localStorage.getItem('user_name')
+    this.http.get('http://localhost:3000/AllJobsList').subscribe((data)=>{
+      this.JobData = data
+      console.log(data);
+      
+    },((err)=>{
+      console.log(err);
+      
+    }))
+
+
+
     this.service.getCollegeData().subscribe((data:any)=>{
       this.CollegeList = data;      
     }),
