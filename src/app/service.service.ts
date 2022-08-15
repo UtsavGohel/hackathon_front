@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServiceService {
 
-  constructor(private http:HttpClient) { }
+  constructor(public http:HttpClient) { }
   getCollegeData(){
     return this.http.get('http://localhost:3000/getCollege')
   }

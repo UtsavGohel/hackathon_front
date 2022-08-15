@@ -222,7 +222,7 @@
                                                 <div class="user-name text-black">
                                                     <span>
                                                         <img src="../../../assets/images/user-avtar/pic4.jpg" alt="">
-                                                    </span>Nikola Tesla
+                                                    </span>Admin
                                                 </div> 
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="ID-ACCOUNT_dropdown">
@@ -230,8 +230,8 @@
                                                 <ul>
                                                     <!-- <li><a><button (click)="this.service.onDashboard()" class="unstyled-button" ><i class="fa fa-home"></i>Dashboard</button></a></li>
                                                     <li><a><button (click)="this.service.onMessage()" class="unstyled-button" ><i class="fa fa-envelope"></i> Messages</button></a></li>
-                                                    <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li>
-                                                    <li><a><button (click)="this.service.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li> -->
+                                                    <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li> -->
+                                                    <li><a><button (click)="this.adminService.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li> 
                                                     
                                                 </ul>
                                                 
@@ -292,42 +292,42 @@
             <div class="content-admin-main">
 
             	<div class="wt-admin-right-page-header clearfix">
-                    <h2>Generate Creadential!</h2>
+                    <h2>Add College</h2>
                     <div class="breadcrumbs"><a href="#">Home</a><span>Add College Details</span></div>
                 </div>
 
                 <form [formGroup]="formCollege" class="tab-pane active"  id="sign-candidate"  >
                     <div class="row" >
                 
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="form-group mb-3">
                                 <input formControlName="collegeName" name="name" type="text" required="" class="form-control" placeholder="College Name*">
                             </div>
                         </div>
                         
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="form-group mb-3">
                                 <input  formControlName="Address" name="Address" type="text" class="form-control" required="" placeholder="Address*">
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="form-group mb-3">
                                 <input  formControlName="contact" name="number" type="number" class="form-control" required="" placeholder="contact*">
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="form-group mb-3">
                                 <input  formControlName="email" name="email" type="email" class="form-control" required="" placeholder="email id*">
                             </div>
                         </div>
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="form-group mb-3">
                                 <input  formControlName="website" name="website" type="text" class="form-control" required="" placeholder="Website URL*">
                             </div>
                         </div>
                         
-                        <div class="col-md-12">
-                            <button type="submit" class="site-button" (click)="RegisterCollegeAdmin()">Sign Up</button>
+                        <div class="col-md-10">
+                            <button type="submit" class="site-button" (click)="RegisterCollegeAdmin()">Generate</button>
                         </div>
                         
                     </div>

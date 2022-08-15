@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
 import { AdminServiceService } from 'src/app/admin-service.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { AdminServiceService } from 'src/app/admin-service.service';
 })
 export class ManageRecruiterComponent implements OnInit {
 
-  constructor(public adminService:AdminServiceService,private service:AdminServiceService) { }
+  constructor(public adminService:AdminServiceService,private service:AdminServiceService,private http:HttpClient,private toast:NgToastService) { }
   CollegeList: any;
   StreamList: any;
   recData: any;
@@ -18,4 +20,6 @@ export class ManageRecruiterComponent implements OnInit {
       this.recData = data;
   })
   }
+
+  
 }

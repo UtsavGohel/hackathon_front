@@ -1,3 +1,5 @@
+
+
     <!-- LOADING AREA START ===== -->
     <!-- <div class="loading-area">
         <div class="loading-box"></div>
@@ -171,7 +173,7 @@
                                                     <span>
                                                         <img src="images/user-avtar/pic4.jpg" alt="">
                                                     </span>
-                                                    {{this.userName}}
+                                                    {{this.userService.userName}}
                                                 </div> 
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="ID-ACCOUNT_dropdown">
@@ -180,7 +182,7 @@
                                                     <!-- <li><a><button (click)="this.service.onDashboard()" class="unstyled-button" ><i class="fa fa-home"></i>Dashboard</button></a></li>
                                                     <li><a><button (click)="this.service.onMessage()" class="unstyled-button" ><i class="fa fa-envelope"></i> Messages</button></a></li> -->
                                                     <!-- <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li> -->
-                                                    <li><a><button (click)="this.userService.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li>
+                                                    <!-- <li><a><button (click)="this.service.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li> -->
                                                     
                                                 </ul>
                                                     
@@ -213,18 +215,24 @@
                     <li class="active">
                         <a (click)="this.userService.onDashboard()" role="button"><i class="fa fa-home"></i><span class="admin-nav-text">Dashboard</span></a>
                     </li>
-
+    
                     <li>
                         <a (click)="this.userService.ListOfJobs()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">List Of Jobs</span></a>
                     </li>
                     <li>
                         <a  (click)="this.userService.appliedJob()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Applied Jobs Status</span></a>
                     </li>
-
-
+                    <li>
+                        <a  (click)="this.userService.userProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Your Profile</span></a>
+                    </li>
+                    <li>
+                        <a  (click)="this.userService.changePassword()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Change Password</span></a>
+                    </li>
+    
+    
                    
                 </ul>
-            </div>   
+            </div>    
         </nav>
 
         <!-- Page Content Holder -->
@@ -233,10 +241,9 @@
             <div class="content-admin-main">
 
                 <div class="wt-admin-right-page-header clearfix">
-                    <h2>
-                        <!-- Hello, {{this.service.userName}}</h2> -->
+                    <!-- <h2>Hello, {{this.service.userName}}</h2> -->
                     <div class="breadcrumbs"><a href="#">Home</a><span>Dasboard</span></div>
-                <!-- </div> -->
+                </div>
 
                 <div class="twm-dash-b-blocks mb-5">
                     <div class="row">
@@ -676,9 +683,9 @@
                 
                   
                                                       
-            <!-- </div> -->
+            </div>
 
-    	<!-- </div> -->
+    	</div>
 
          
 
@@ -702,4 +709,4 @@
         </div>
           
 
-	<!-- </div> -->
+	</div>

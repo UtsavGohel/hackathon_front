@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
   selector: 'app-applyfor-job',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplyforJobComponent implements OnInit {
 
-  constructor() { }
+  constructor(public userService:UserServiceService) { }
 
   ngOnInit(): void {
   }

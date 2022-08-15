@@ -45,7 +45,7 @@ const routes: Routes = [
   {path:'user-profile',component:UserProfileComponent},
   {path:'user-logout',component:UserLogoutComponent},
   {path:'user-delete',component:UserDeleteProfileComponent},
-  {path:'user-change-password',component:ChangePasswordComponent},
+  {path:'user-change-password',component:UserChangePasswordComponent},
   {path:'generate-credential',component:GenerateCredentialsComponent},
   {path:'manage-recruiter',component:ManageRecruiterComponent},
   {path:'add-college',component:AddCollegeComponent},
