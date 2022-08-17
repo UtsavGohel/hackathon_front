@@ -26,6 +26,9 @@ import { AddCollegeComponent } from './admin/add-college/add-college.component';
 import { ApplyForJobComponent } from './candidate/apply-for-job/apply-for-job.component';
 import { ApplyJobStatusComponent } from './candidate/apply-job-status/apply-job-status.component';
 import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component';
+import { UserMessageComponent } from './candidate/user-message/user-message.component';
+
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/homepage',pathMatch:'full'},
@@ -56,6 +59,7 @@ const routes: Routes = [
   {path:'apply-for-job',component:ApplyForJobComponent},
   {path:'appliedjob-status',component:ApplyJobStatusComponent},
   {path:'user-profile-by-recruiter',component:UserProfileByRecComponent},
+  {path:'userChat',component:UserMessageComponent},
 
 
 

@@ -12228,8 +12228,9 @@ strong {
   display: block;
   padding: 30px 80px 30px 20px;
   background-color: #fff;
-  margin: 0px 20px;
+  margin: 3px 20px;
   border-radius: 10px;
+  border: 2px solid #d4e6ff;
 }
 
 @media (max-width: 1366px) {
@@ -14419,4 +14420,12 @@ strong {
   background: #d4e6ff !important;
   color: black !important;
 }
+
+.active-link{
+  background: aliceblue !important;
+ }
+ .simple-link{
+  background: white !important;
+ } 
+
 /*# sourceMappingURL=style.css.map */

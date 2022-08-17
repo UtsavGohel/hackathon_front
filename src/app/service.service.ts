@@ -79,4 +79,21 @@ export class ServiceService {
   updateRecruiter(data:any){
     return this.http.patch('http://localhost:3000/recruiterUpdate', data)
   }
+  getRoom(data:any){
+    return this.http.post('http://localhost:3000/getRoom', data);
+  }
+  updateRoom(data:any){
+    return this.http.put('http://localhost:3000/updateRoom', data);
+  }
+  getChatsById(roomId:any){
+    return this.http.get('http://localhost:3000/getChats/'+ roomId);
+  }
+  addMessage(data:any){
+    return this.http.post('http://localhost:3000/addMessage', data);
+  }
+  getRecruiterListByCandidate(userId:any){
+    return this.http.get('http://localhost:3000/getJobRecruiterOfCandidate/'+ userId);
+  }
+ 
+ 
 }

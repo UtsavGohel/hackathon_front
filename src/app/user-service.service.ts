@@ -70,4 +70,9 @@ export class UserServiceService {
     return this.http.get('http://localhost:3000/AllJobsListById/'+id)
   }
 
+  onMessage(){   
+    this.router.navigate(['userChat']).then(() => {
+      window.location.reload()
+    })
+  } 
 }

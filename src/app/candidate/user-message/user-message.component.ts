@@ -1,22 +1,19 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-// import { io } from 'socket.io-client';
 import { AppService } from 'src/app/app.service';
 import { ServiceService } from 'src/app/service.service';
-// const SOCKET_ENDPOINT = "localhost:3000";
+import { UserServiceService } from 'src/app/user-service.service';
+import { UserChatService } from '../user-chat.service';
  
-import { ChatService } from '../chat.service';
 @Component({
- selector: 'app-message',
- templateUrl: './message.component.html',
- styleUrls: ['./message.component.css']
+ selector: 'app-user-message',
+ templateUrl: './user-message.component.html',
+ styleUrls: ['./user-message.component.css']
 })
-export class MessageComponent implements OnInit {
- 
- @ViewChild('scrollMe') private myScrollContainer: ElementRef;
-  socket:any;
+export class UserMessageComponent implements OnInit {
+ socket:any;
  message:any;
- public userId:any = localStorage.getItem('rec_id');
+ public userId:any = localStorage.getItem('user_id');
  
  public roomId: any;
  public messageText: any;
@@ -29,8 +26,8 @@ export class MessageComponent implements OnInit {
  public selectedUser:any;
  
  public userList:any;
- 
- constructor(private router:Router, public service:AppService, private chatService: ChatService,private httpService:ServiceService) { }
+ @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+ constructor(private router:Router, public service:AppService, private chatService: UserChatService,private httpService:ServiceService, public userService:UserServiceService) { }
  
  ngOnInit(): void {
    this.chatService.getMessage()
@@ -38,10 +35,9 @@ export class MessageComponent implements OnInit {
        if (this.roomId) {
          setTimeout(() => {
            this.httpService.getChatsById(this.roomId).subscribe((res:any)=>{
-             this.messageArray = res;
-             console.log(this.messageArray);
-            
+             this.messageArray = res;             
            })
+           this.showScreen= true;
            // this.storageArray = this.chatService.getStorage();
            // const storeIndex = this.storageArray
            //   .findIndex((storage:any) => storage.roomId === this.roomId);
@@ -52,22 +48,24 @@ export class MessageComponent implements OnInit {
    this.login()
  }
   ngAfterViewChecked() {       
-       this.scrollToBottom()
+   this.scrollToBottom()
  }
-  scrollToBottom(): void {
-   try {
-       this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;       
+ 
+ scrollToBottom(): void {
+     try {
+         this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;       
    } catch(err) { }                
  }
  
  login(): void {
    this.currentUser = this.userId;
-   this.httpService.getCandidateList(this.userId).subscribe((res:any)=>{
+   this.httpService.getRecruiterListByCandidate(this.userId).subscribe((res:any)=>{     
      this.userList = res.filter((value:any, index:any, self:any) =>
        index === self.findIndex((t:any) => (
          t.place === value.place && t.name === value.name
        ))
      );
+    
    })
    if (this.currentUser) {
      this.showScreen = true;
@@ -77,8 +75,8 @@ export class MessageComponent implements OnInit {
  selectUserHandler(id: any): void {
    this.selectedUser = this.userList.find((user:any) => user.id === id);
    const obj= {
-     recruiterId: this.userId,
-     userId: this.selectedUser.id
+     userId: this.userId,
+     recruiterId: this.selectedUser.id
    }
    this.httpService.getRoom(obj).subscribe((res:any)=>{          
      this.roomId = res.id;
@@ -143,5 +141,6 @@ export class MessageComponent implements OnInit {
    this.messageText = '';
  }
 }
+ 
  
 
