@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserServiceService {
-  userid:any;
+  userid:any = localStorage.getItem('user_id');
   // userName:any;
   userdata:any;
 
@@ -29,8 +29,13 @@ export class UserServiceService {
       window.location.reload()
     })
   }
-  appliedJob() {
-    this.router.navigate(['appliedJob']).then(() => {
+  applyForJob() {
+    this.router.navigate(['apply-for-job']).then(() => {
+      window.location.reload()
+    })
+  }
+  appliedJobStatus() {
+    this.router.navigate(['appliedjob-status']).then(() => {
       window.location.reload()
     })
   }
@@ -49,8 +54,20 @@ export class UserServiceService {
       window.location.reload()
     })
   }
+  onDeleteProfile(){
+    this.router.navigate(['user-delete']).then(() => {
+      window.location.reload()
+  })}
 
   editUserData(data:any){
     return this.http.put('http://localhost:3000/editUser_register', data);
   }
+
+  deleteProfile(){
+    return this.http.delete('http://localhost:3000/deleteUser/'+this.userid)
+  }
+  AllJobsListByIdId(id:any){
+    return this.http.get('http://localhost:3000/AllJobsListById/'+id)
+  }
+
 }

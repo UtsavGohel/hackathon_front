@@ -61,7 +61,6 @@ export class HomePageComponent implements OnInit {
       address:new FormControl(''),
       contact:new FormControl(''),
       experience:new FormControl(''),
-      collegeId:new FormControl(''),
       streamId:new FormControl(''),
       subjects:new FormControl(''),
       resume:new FormControl(''),
@@ -74,7 +73,7 @@ export class HomePageComponent implements OnInit {
       password:new FormControl('1')
     })
     this.formLoginRecruiter = new FormGroup({
-      email:new FormControl('rec@gmail.com'),
+      email:new FormControl('utsavgohel2002@gmail.com'),
       password:new FormControl('1')
     })
     this.formLoginAdmin = new FormGroup({

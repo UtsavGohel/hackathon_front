@@ -21,7 +21,7 @@ import { MessageComponent } from './Recruiter/message/message.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ProfessorDataComponent } from './Recruiter/professor-data/professor-data.component';
 import { ListOfJobComponent } from './candidate/list-of-job/list-of-job.component';
-import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.component';
+
 
 import { UserProfileComponent } from './candidate/user-profile/user-profile.component';
 import { UserChangePasswordComponent } from './candidate/user-change-password/user-change-password.component';
@@ -29,7 +29,11 @@ import { UserDeleteProfileComponent } from './candidate/user-delete-profile/user
 import { UserLogoutComponent } from './candidate/user-logout/user-logout.component';
 import { GenerateCredentialsComponent } from './admin/generate-credentials/generate-credentials.component';
 import { ManageRecruiterComponent } from './admin/manage-recruiter/manage-recruiter.component';
-import { AddCollegeComponent } from './admin/add-college/add-college.component'; // <-- import the module
+import { AddCollegeComponent } from './admin/add-college/add-college.component';
+import { ApplyForJobComponent } from './candidate/apply-for-job/apply-for-job.component';
+import { ApplyJobStatusComponent } from './candidate/apply-job-status/apply-job-status.component';
+import { LogoutAdminComponent } from './admin/logout-admin/logout-admin.component';
+import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component'; // <-- import the module
 
 
 
@@ -51,7 +55,7 @@ import { AddCollegeComponent } from './admin/add-college/add-college.component';
     MessageComponent,
     ProfessorDataComponent,
     ListOfJobComponent,
-    ApplyforJobComponent,
+    
     
     UserProfileComponent,
     UserChangePasswordComponent,
@@ -60,6 +64,11 @@ import { AddCollegeComponent } from './admin/add-college/add-college.component';
     GenerateCredentialsComponent,
     ManageRecruiterComponent,
     AddCollegeComponent,
+    ApplyForJobComponent,
+    ApplyJobStatusComponent,
+    LogoutAdminComponent,
+    UserProfileByRecComponent,
+    
   ],
   imports: [
     BrowserModule,

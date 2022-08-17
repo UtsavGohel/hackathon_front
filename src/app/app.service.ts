@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
 export class AppService {
 
   public userName:any = localStorage.getItem('rec_name');
-  constructor(private router: Router) { }
+  constructor(private router: Router,private http:HttpClient) { }
 
   closeModal() {
     (<any>$('.modal-backdrop')).modal('hide');
@@ -65,6 +66,9 @@ export class AppService {
     this.router.navigate(['change-password']).then(() => {
       window.location.reload()
     })
+  }
+  getUserData(userId:any){
+    return this.http.get('http://localhost:3000/user_details/'+userId)
   }
   
   

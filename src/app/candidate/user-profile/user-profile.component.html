@@ -170,9 +170,10 @@
                                         <div class="dropdown">
                                             <a href="javascript:;" class="dropdown-toggle" id="ID-ACCOUNT_dropdown" data-bs-toggle="dropdown">
                                                 <div class="user-name text-black">
-                                                    <!-- <span> -->
-                                                        <img src="images/user-avtar/pic4.jpg" alt="">
-                                                    <!-- </span>{{this.service.userName}} -->
+                                                    <span>
+                                                        <img src="../../../assets/images/user-avtar/pic4.jpg" alt="">
+                                                    </span>
+                                                    {{this.userService.userName}}
                                                 </div> 
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="ID-ACCOUNT_dropdown">
@@ -181,7 +182,7 @@
                                                     <!-- <li><a><button (click)="this.service.onDashboard()" class="unstyled-button" ><i class="fa fa-home"></i>Dashboard</button></a></li>
                                                     <li><a><button (click)="this.service.onMessage()" class="unstyled-button" ><i class="fa fa-envelope"></i> Messages</button></a></li> -->
                                                     <!-- <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li> -->
-                                                    <!-- <li><a><button (click)="this.service.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li> -->
+                                                    <li><a><button (click)="this.userService.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li>
                                                     
                                                 </ul>
                                                     
@@ -219,13 +220,19 @@
                         <a (click)="this.userService.ListOfJobs()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">List Of Jobs</span></a>
                     </li>
                     <li >
-                        <a  (click)="this.userService.appliedJob()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Applied Jobs Status</span></a>
+                        <a  (click)="this.userService.appliedJobStatus()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Applied Jobs Status</span></a>
                     </li>
                     <li class="active">
                         <a  (click)="this.userService.userProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Your Profile</span></a>
                     </li>
                     <li>
                         <a  (click)="this.userService.changePassword()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Change Password</span></a>
+                    </li>
+                    <li>
+                        <a  (click)="this.userService.onDeleteProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Delete Your Profile</span></a>
+                    </li>
+                    <li>
+                        <a  (click)="this.userService.onLogout()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Log Out</span></a>
                     </li>
     
     
@@ -342,7 +349,7 @@
                                             </select>
                                            </div>
                                        </div>
-                                       <div class="col-xl-4 col-lg-12 col-md-12">
+                                       <!-- <div class="col-xl-4 col-lg-12 col-md-12">
                                            <div class="form-group">
                                                <label>college</label>
                                                <select class="form-control"  formControlName="collegeId">
@@ -352,7 +359,7 @@
                                                 </option>
                                             </select>
                                            </div>
-                                       </div>
+                                       </div> -->
                                       
    
                                        

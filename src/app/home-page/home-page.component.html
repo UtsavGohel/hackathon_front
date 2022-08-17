@@ -608,7 +608,7 @@
                                 
                             </div>
                             <!-- <button class="btn btn-danger">Apply For Job</button> -->
-                            <button class="twm-backto-login btn btn-dange" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Apply For Job</button>
+                            <button class="twm-backto-login btn btn-danger" data-bs-target="#sign_up_popup2" data-bs-toggle="modal" data-bs-dismiss="modal">Apply For Job</button>
                         </div>
                     </li>
 
@@ -1085,15 +1085,15 @@
                                                     <input  formControlName="experience" name="experience" type="number" class="form-control" required="" placeholder="experience*">
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6" >
+                                            <!-- <div class="col-lg-6" >
                                                 <select class="form-control mb-3" formControlName="collegeId" >
                                                     <option value="" disabled selected >Select your College*</option>
                                                     <option [value]="data.id"  *ngFor="let data of CollegeList">
                                                         {{data.collegeName}}
-                                                        <!-- {{data.id}} -->
+                                                        {{data.id}}
                                                     </option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                             <div class="col-lg-6">
                                                 <select class="form-control mb-3" formControlName="streamId" >
                                                     <option value="" disabled selected>Select your Stream*</option>

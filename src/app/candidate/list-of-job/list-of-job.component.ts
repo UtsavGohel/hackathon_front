@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
@@ -13,11 +14,11 @@ export class ListOfJobComponent implements OnInit {
   userid:any;
   userName:any;
   userdata:any;
-  constructor(public userService:UserServiceService,private http:HttpClient) { }
+  public job_id:any
+  constructor(public userService:UserServiceService,private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
-    this.userid = localStorage.getItem('user_id')    
-    this.userName = localStorage.getItem('user_name')
+    
     this.http.get('http://localhost:3000/AllJobsList').subscribe((data)=>{
       this.JobData = data
       console.log(data);
@@ -27,8 +28,13 @@ export class ListOfJobComponent implements OnInit {
       
     }))
   }
-  applyJob(){
+  applyJob(jobId:any,recruiterId:any){
+    this.router.navigate(['apply-for-job',{jobId: jobId,recruiterId:recruiterId}]).then(()=>{
+      window.location.reload()
+    })
+    // console.log(jobId);
     
+
     
   }
 

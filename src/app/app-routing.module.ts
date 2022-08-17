@@ -14,7 +14,7 @@ import { PostJobComponent } from './Recruiter/post-job/post-job.component';
 import { ProfileComponent } from './Recruiter/profile/profile.component';
 import { RecruiterDashboardComponent } from './Recruiter/recruiter-dashboard/recruiter-dashboard.component';
 import { ProfessorDataComponent } from './Recruiter/professor-data/professor-data.component';
-import { ApplyforJobComponent } from './candidate/applyfor-job/applyfor-job.component';
+
 import { ListOfJobComponent } from './candidate/list-of-job/list-of-job.component';
 import { UserProfileComponent } from './candidate/user-profile/user-profile.component';
 import { UserLogoutComponent } from './candidate/user-logout/user-logout.component';
@@ -23,11 +23,15 @@ import { UserChangePasswordComponent } from './candidate/user-change-password/us
 import { GenerateCredentialsComponent } from './admin/generate-credentials/generate-credentials.component';
 import { ManageRecruiterComponent } from './admin/manage-recruiter/manage-recruiter.component';
 import { AddCollegeComponent } from './admin/add-college/add-college.component';
+import { ApplyForJobComponent } from './candidate/apply-for-job/apply-for-job.component';
+import { ApplyJobStatusComponent } from './candidate/apply-job-status/apply-job-status.component';
+import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/homepage',pathMatch:'full'},
   {path:'homepage',component:HomePageComponent},
   {path:'admin-dashboard',component:AdminDashboardComponent},
+  {path:'logout-admin',component:LogoutComponent},
   {path:'recruiter-dashboard',component:RecruiterDashboardComponent},
   {path:'candidate-dashboard',component:CandidateDashboardComponent},
   {path:'applied-candidate',component:AppliedCandidateComponent},
@@ -40,7 +44,7 @@ const routes: Routes = [
   {path:'post-job',component:PostJobComponent},
   {path:'message',component:MessageComponent},
   {path:'professor-data',component:ProfessorDataComponent},
-  {path:'appliedJob',component:ApplyforJobComponent},
+  
   {path:'ListOfJobs',component:ListOfJobComponent},
   {path:'user-profile',component:UserProfileComponent},
   {path:'user-logout',component:UserLogoutComponent},
@@ -49,6 +53,9 @@ const routes: Routes = [
   {path:'generate-credential',component:GenerateCredentialsComponent},
   {path:'manage-recruiter',component:ManageRecruiterComponent},
   {path:'add-college',component:AddCollegeComponent},
+  {path:'apply-for-job',component:ApplyForJobComponent},
+  {path:'appliedjob-status',component:ApplyJobStatusComponent},
+  {path:'user-profile-by-recruiter',component:UserProfileByRecComponent},
 
 
 

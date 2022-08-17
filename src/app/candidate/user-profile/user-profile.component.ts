@@ -51,7 +51,8 @@ export class UserProfileComponent implements OnInit {
         id: new FormControl(this.userId),
       })
       
-      this.formUserProfile.patchValue(res);      
+      this.formUserProfile.patchValue(res);
+      this.formUserProfile.controls['DOB'].setValue(res.DOB.substring(0, 10))   
     })
 
   }

@@ -14,9 +14,11 @@ export class AppliedCandidateComponent implements OnInit {
   public userId:any = localStorage.getItem('rec_id');
   public jobId:any;
   public jobName:any;
+  public candidateId:any = localStorage.getItem('user_id')
   public candidateList:any =[];
 
-  constructor(private route: ActivatedRoute,private router:Router, public service:AppService, private httpService:ServiceService) { }
+  constructor(private route: ActivatedRoute,private router:Router, 
+    public service:AppService, private httpService:ServiceService) { }
 
   ngOnInit(): void {
     this.jobId = this.route.snapshot.paramMap.get('jobId');
@@ -44,6 +46,10 @@ export class AppliedCandidateComponent implements OnInit {
       })
     }
 
+  }
+
+  userProfile(){
+    this.router.navigate(['user-profile-by-recruiter',{candidateId:this.candidateId}])
   }
   
 }

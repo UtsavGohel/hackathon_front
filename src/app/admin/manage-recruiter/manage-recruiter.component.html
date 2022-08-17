@@ -276,7 +276,7 @@
                         <td>{{data.name}}</td>
                         <td>{{data.email}}</td>
                         <td>{{data.collegeName}}</td>
-                        <td><button class="btn btn-danger">Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="EditRec(data.id)">Edit</button></td>
                     </tr>
                     
                     </tbody>
@@ -319,6 +319,10 @@
                     <li>
                         <a (click)="this.adminService.AddCollegeData()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Add College Data</span></a>
                     </li>
+                    <li>
+                        <a (click)="this.adminService.onLogout()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Logout</span></a>
+                    </li>
+
                 </ul>
             </div>   
         </nav>

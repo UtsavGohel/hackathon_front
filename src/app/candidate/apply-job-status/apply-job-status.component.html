@@ -45,7 +45,7 @@
                                             <ul>
                                                 <li class="clearfix">
                                                     <span class="msg-avtar">
-                                                        <img src="images/user-avtar/pic1.jpg" alt="">
+                                                        <img src="../../../assets/images/user-avtar/pic4.jpg" alt="">
                                                     </span>
                                         
                                                     <div class="msg-texting">
@@ -182,7 +182,7 @@
                                                     <!-- <li><a><button (click)="this.service.onDashboard()" class="unstyled-button" ><i class="fa fa-home"></i>Dashboard</button></a></li>
                                                     <li><a><button (click)="this.service.onMessage()" class="unstyled-button" ><i class="fa fa-envelope"></i> Messages</button></a></li> -->
                                                     <!-- <li><a><button (click)="this.service.onProfile()" class="unstyled-button" ><i class="fa fa-envelope"></i> Profile</button></a></li> -->
-                                                    <!-- <li><a><button (click)="this.service.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li> -->
+                                                    <li><a><button (click)="this.userService.onLogout()" class="unstyled-button" ><i class="fa fa-envelope"></i> Logout</button></a></li>
                                                     
                                                 </ul>
                                                     
@@ -216,24 +216,25 @@
                         <a (click)="this.userService.onDashboard()" role="button"><i class="fa fa-home"></i><span class="admin-nav-text">Dashboard</span></a>
                     </li>
     
-                    <li >
+                    <li>
                         <a (click)="this.userService.ListOfJobs()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">List Of Jobs</span></a>
                     </li>
-                    <li >
+                    <li class="active">
                         <a  (click)="this.userService.appliedJobStatus()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Applied Jobs Status</span></a>
                     </li>
-                    <li >
+                    <li>
                         <a  (click)="this.userService.userProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Your Profile</span></a>
                     </li>
                     <li>
                         <a  (click)="this.userService.changePassword()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Change Password</span></a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a  (click)="this.userService.onDeleteProfile()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Delete Your Profile</span></a>
                     </li>
                     <li>
                         <a  (click)="this.userService.onLogout()" role="button"><i class="fa fa-user-tie"></i><span class="admin-nav-text">Log Out</span></a>
                     </li>
+                    
     
     
                    
@@ -244,21 +245,51 @@
         <!-- Page Content Holder -->
         <div id="content">
 
-            <div class="content-admin-main">
-
-            	<div class="wt-admin-right-page-header clearfix">
-                    <h2>User Profile!</h2>
-                    <div class="breadcrumbs"><a href="#">Home</a><a href="#">Dasboard</a><span>Delete Profile!</span></div>
-                </div>
-                <h3>Click Here To Delete Your Profile !!</h3>
-                <div></div>
-                    <button class="btn btn-danger"    data-bs-toggle="modal" data-bs-target="#delete-dash-profile" class="site-button">Delete Profile</button>
-                
-                <!--Basic Information Of User-->
-                
-
-    	</div>
-
+            <div class="content-admin-main"> 
+                <div class="wt-admin-right-page-header clearfix">
+                    <!-- <h2> -->
+                        <!-- Hello, {{this.service.userName}}
+                     </h2> -->
+                    <div class="breadcrumbs">
+                        <a href="#">Home</a>
+                    <span>List Of Jobs</span>
+                     </div>
+                <div class="section-full p-t120  p-b90 site-bg-white">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12"> 
+                                <div class="twm-jobs-list-wrap">
+                                    <ul>
+                                         <li *ngFor="let data of JobData">
+                                             <div class="twm-jobs-list-style1 mb-5">      
+                                                 <div class="twm-left-content col-lg-8" >
+                                                     <a  class="twm-job-title">
+                                                         <h3>{{data.jobTitle}}
+                                                            <span class="twm-job-post-duration">/ 1 days ago</span></h3>
+                                                            <h4>Job requirement for {{data.streamName}}</h4>
+                                                            <h5>Minimum Experience Reqiured '{{data.experience}}' Years</h5>
+                                                            <h5>Minimum Qualification Reqiured is {{data.qualification}}</h5>
+                                                     </a>  
+                                                     <h3 class="twm-job-websites site-text-primary text">{{data.jobDescription}}</h3>
+                                                 </div>
+                                                 <div class=" row twm-right-content col-lg-4">
+                                                     <div class="twm-jobs-category green"><span [ngClass]="{'twm-bg-purple': data.name == 'Part Time', 'twm-bg-green' : data.name == 'Full Time' }">{{data.name}}</span></div>
+                                                     <div class="twm-jobs-amount">{{data.noOfOpening}} <span> Openings</span>
+                                                     <div></div>10 <span> Total Applicants</span></div>
+                                                     <!-- <button class="btn btn-danger " (click)="applyJob(data.id)">Apply For Job</button> -->
+                                                     <button class="btn text-light" [ngClass]="{'twm-bg-green': data.name == 'Approved', 'twm-bg-red' : data.name == 'Rejected', 'twm-bg-golden' : data.name == 'Pending' }">{{data.name}}</button>
+                                                 </div>     
+                                             </div>
+                                         </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                </div>  
+            </div>   
+        </div>
          
 
 
@@ -282,21 +313,3 @@
           
 
 	</div>
-
-                <!--Apply job Profile Popup-->
-                <div class="modal fade twm-model-popup" id="delete-dash-profile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"  aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <h4 class="modal-title">Do you want to delete your profile?</h4>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="site-button" data-bs-dismiss="modal">No</button>
-                            <button type="button" class="site-button outline-primary" (click)="DeleteNow()">Yes</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
