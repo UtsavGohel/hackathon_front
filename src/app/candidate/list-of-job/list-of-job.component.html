@@ -257,6 +257,7 @@
                         <a href="#">Home</a>
                     <span>List Of Jobs</span>
                      </div>
+                     
                 <div class="section-full p-t120  p-b90 site-bg-white">
                     <div class="container">
                         <div class="row">
@@ -278,7 +279,7 @@
                                                  <div class=" row twm-right-content col-lg-4">
                                                      <div class="twm-jobs-category green"><span [ngClass]="{'twm-bg-purple': data.name == 'Part Time', 'twm-bg-green' : data.name == 'Full Time' }">{{data.name}}</span></div>
                                                      <div class="twm-jobs-amount">{{data.noOfOpening}} <span> Openings</span>
-                                                     <div></div>10 <span> Total Applicants</span></div>
+                                                     <div></div>{{data.jobCount}} <span> Total Applicants</span></div>
                                                      <button class="btn btn-danger " (click)="applyJob(data.id,data.recruiterId)">Apply For Job</button>
                                                  </div>     
                                              </div>

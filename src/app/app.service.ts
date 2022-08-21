@@ -37,6 +37,11 @@ export class AppService {
       window.location.reload()
     })
   }
+  AddProfessorData(){
+    this.router.navigate(['AddProfessorData']).then(() => {
+      window.location.reload()
+  })
+}
   onLogout() {
     this.router.navigate(['homepage']).then(() => {
       window.location.reload()
@@ -71,5 +76,8 @@ export class AppService {
     return this.http.get('http://localhost:3000/user_details/'+userId)
   }
   
+  getCountOfApplicant(jobId:any){
+    return this.http.get('http://localhost:3000/noOfApplicant/'+jobId)
+  }
   
 }

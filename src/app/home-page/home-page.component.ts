@@ -6,6 +6,7 @@ import {Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { ServiceService } from '../service.service';
 import { LocationStrategy } from '@angular/common';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-home-page',
@@ -25,7 +26,9 @@ export class HomePageComponent implements OnInit {
   userdata:any;
   JobData:any;
   
-  constructor(private location: LocationStrategy, private http:HttpClient,private router:Router,private toast:NgToastService,private service:ServiceService) {
+  constructor(private location: LocationStrategy, private http:HttpClient,
+    private router:Router,private toast:NgToastService,
+    private service:ServiceService,private AppService:AppService) {
     // preventing back button in browser implemented by "Samba Siva"  
     history.pushState(null, "null", window.location.href);  
       this.location.onPopState(() => {
@@ -39,7 +42,11 @@ export class HomePageComponent implements OnInit {
     this.userName = localStorage.getItem('user_name')
     this.http.get('http://localhost:3000/AllJobsList').subscribe((data)=>{
       this.JobData = data
-      console.log(data);
+      this.JobData.forEach((element:any) => {
+        this.AppService.getCountOfApplicant(element.id).subscribe((data:any)=>{
+          element.jobCount = data.count;      
+        })  
+      });
       
     },((err)=>{
       console.log(err);
@@ -48,6 +55,7 @@ export class HomePageComponent implements OnInit {
 
 
 
+    
     this.service.getCollegeData().subscribe((data:any)=>{
       this.CollegeList = data;      
     }),
@@ -113,6 +121,7 @@ export class HomePageComponent implements OnInit {
       this.toast.success({detail:"Login Succesful",summary:"",duration:5000})
       localStorage.setItem("user_id",res.data.id)
       localStorage.setItem("user_name",res.data.name)
+      localStorage.setItem("password",res.data.password)
       this.router.navigate(['candidate-dashboard']).then(()=>
       {
         this.toast.success({detail:"Logout Succesful",summary:"",duration:5000})        

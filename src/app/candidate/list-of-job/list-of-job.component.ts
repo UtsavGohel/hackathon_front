@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppService } from 'src/app/app.service';
 import { UserServiceService } from 'src/app/user-service.service';
 
 @Component({
@@ -15,13 +16,22 @@ export class ListOfJobComponent implements OnInit {
   userName:any;
   userdata:any;
   public job_id:any
-  constructor(public userService:UserServiceService,private http:HttpClient,private router:Router) { }
+  public CollegeList:any
+  public jobCount:any
+  constructor(public userService:UserServiceService,private http:HttpClient,
+    private router:Router,private AppService:AppService) { }
 
   ngOnInit(): void {
     
+    
+
     this.http.get('http://localhost:3000/AllJobsList').subscribe((data)=>{
       this.JobData = data
-      console.log(data);
+      this.JobData.forEach((element:any) => {
+        this.AppService.getCountOfApplicant(element.id).subscribe((data:any)=>{
+          element.jobCount = data.count;      
+        })  
+      });
       
     },((err)=>{
       console.log(err);

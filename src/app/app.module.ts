@@ -34,7 +34,8 @@ import { ApplyForJobComponent } from './candidate/apply-for-job/apply-for-job.co
 import { ApplyJobStatusComponent } from './candidate/apply-job-status/apply-job-status.component';
 import { LogoutAdminComponent } from './admin/logout-admin/logout-admin.component';
 import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component';
-import { UserMessageComponent } from './candidate/user-message/user-message.component'; // <-- import the module
+import { UserMessageComponent } from './candidate/user-message/user-message.component';
+import { AddProffesorDataComponent } from './Recruiter/add-proffesor-data/add-proffesor-data.component'; // <-- import the module
 
 
 
@@ -70,6 +71,7 @@ import { UserMessageComponent } from './candidate/user-message/user-message.comp
     LogoutAdminComponent,
     UserProfileByRecComponent,
     UserMessageComponent,
+    AddProffesorDataComponent,
     
   ],
   imports: [

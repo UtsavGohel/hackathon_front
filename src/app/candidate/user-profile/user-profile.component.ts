@@ -14,6 +14,7 @@ import { UserServiceService } from 'src/app/user-service.service';
 export class UserProfileComponent implements OnInit {
   formUserProfile:FormGroup
   streamList: any;
+  password: any = localStorage.getItem('password');
   CollegeList: any;
   public userId:any = localStorage.getItem('user_id');
   constructor(public userService:UserServiceService,private toast:NgToastService,public httpservice:ServiceService,private http:HttpClient) { }
@@ -22,13 +23,11 @@ export class UserProfileComponent implements OnInit {
 
     this.httpservice.getStreamData().subscribe((data:any)=>{
       this.streamList = data;
-      console.log(data);
-      
+      console.log(data);      
     })
     this.httpservice.getCollegeData().subscribe((data:any)=>{
       this.CollegeList = data;
       console.log(data);
-      
     })
 
 
@@ -36,7 +35,7 @@ export class UserProfileComponent implements OnInit {
       this.formUserProfile = new FormGroup({
         name: new FormControl(''),
         email: new FormControl(''),
-        password:new FormControl(''),
+        password:new FormControl(this.password),
         address: new FormControl(''),
         contact: new FormControl(''),
         experience: new FormControl(''),

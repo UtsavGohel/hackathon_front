@@ -27,6 +27,7 @@ import { ApplyForJobComponent } from './candidate/apply-for-job/apply-for-job.co
 import { ApplyJobStatusComponent } from './candidate/apply-job-status/apply-job-status.component';
 import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component';
 import { UserMessageComponent } from './candidate/user-message/user-message.component';
+import { AddProffesorDataComponent } from './Recruiter/add-proffesor-data/add-proffesor-data.component';
 
 
 
@@ -60,6 +61,7 @@ const routes: Routes = [
   {path:'appliedjob-status',component:ApplyJobStatusComponent},
   {path:'user-profile-by-recruiter',component:UserProfileByRecComponent},
   {path:'userChat',component:UserMessageComponent},
+  {path:'AddProfessorData',component:AddProffesorDataComponent},
 
 
 
