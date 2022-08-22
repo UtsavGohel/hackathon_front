@@ -206,6 +206,24 @@
                                             </div>
                                         </div> 
                                       
+                                        <!-- Example single danger button -->
+                                        <h4>
+                                            Select Application status
+                                        </h4>
+                                        <div class="btn-group">
+                                        <button type="button" 
+                                        class="btn btn-danger dropdown-toggle" 
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Action
+                                        </button>
+                                        <div class="dropdown-menu" >
+                                            <a class="dropdown-item" *ngFor="let data of statusName" (click)="statusUpdate(data.id)">{{data.name}}</a>
+                                        </div>
+                                        </div>
+                                        <div class="mt-2">
+
+                                            <button class="btn btn-primary">Update Application Status</button>
+                                        </div>
                                         
     
                                         

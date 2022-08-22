@@ -94,6 +94,10 @@ export class ServiceService {
   getRecruiterListByCandidate(userId:any){
     return this.http.get('http://localhost:3000/getJobRecruiterOfCandidate/'+ userId);
   }
+
+  updateStatus(id:any,canid:any){
+    return this.http.patch('http://localhost:3000/updateStatus/'+canid,id)
+  }
  
  
 }
