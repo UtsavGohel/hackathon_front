@@ -280,7 +280,8 @@
                                                      <div class="twm-jobs-category green"><span [ngClass]="{'twm-bg-purple': data.name == 'Part Time', 'twm-bg-green' : data.name == 'Full Time' }">{{data.name}}</span></div>
                                                      <div class="twm-jobs-amount">{{data.noOfOpening}} <span> Openings</span>
                                                      <div></div>{{data.jobCount}} <span> Total Applicants</span></div>
-                                                     <button class="btn btn-danger " (click)="applyJob(data.id,data.recruiterId)">Apply For Job</button>
+                                                     <button class="btn btn-danger disabled" *ngIf="data.count > 0">Applied Job</button>
+                                                    <button class="btn btn-danger" *ngIf="!(data.count > 0)" (click)="applyJob(data.id,data.recruiterId)">Apply For Job</button>
                                                  </div>     
                                              </div>
                                          </li>

@@ -20,6 +20,11 @@ export class UserServiceService {
     })
   }
 
+  
+  checkAppliedForJob(data:any){
+    return this.http.post('http://localhost:3000/checkAppliedForJob', data)
+  }
+ 
   getUserData(userId:any){
     return this.http.get('http://localhost:3000/user_details/'+userId)
   }

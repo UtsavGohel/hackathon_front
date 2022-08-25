@@ -16,6 +16,7 @@ export class ListOfJobComponent implements OnInit {
   userName:any;
   userdata:any;
   public job_id:any
+  public userId:any  = localStorage.getItem('user_id')
   public CollegeList:any
   public jobCount:any
   constructor(public userService:UserServiceService,private http:HttpClient,
@@ -30,7 +31,15 @@ export class ListOfJobComponent implements OnInit {
       this.JobData.forEach((element:any) => {
         this.AppService.getCountOfApplicant(element.id).subscribe((data:any)=>{
           element.jobCount = data.count;      
-        })  
+        }) 
+        const data:any ={
+          userId: this.userId,
+          jobId: element.id
+        }
+        this. userService.checkAppliedForJob(data).subscribe((res:any)=>{
+          element.count = res.count;         
+        })
+  
       });
       
     },((err)=>{
@@ -44,7 +53,7 @@ export class ListOfJobComponent implements OnInit {
     })
     // console.log(jobId);
     
-
+    
     
   }
 

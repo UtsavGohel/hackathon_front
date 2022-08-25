@@ -17,6 +17,7 @@ export class HomePageComponent implements OnInit {
 
   form: FormGroup;
   formLoginAdmin: FormGroup;
+  formTempCand : FormGroup
   formLoginCandidate: FormGroup;
   formLoginRecruiter: FormGroup;
   CollegeList: any;
