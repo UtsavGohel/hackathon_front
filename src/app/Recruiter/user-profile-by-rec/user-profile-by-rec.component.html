@@ -207,6 +207,15 @@
                                         </div> 
                                       
                                         <!-- Example single danger button -->
+                                        <div class="twm-jobs-category">
+                                            <h4>
+                                                Current Application Status
+                                                <span [ngClass]="{'twm-bg-green': currentStatus?.name == 'Approved', 'twm-bg-red' : currentStatus?.name == 'Rejected', 'twm-bg-golden' : currentStatus?.name == 'Pending' }">{{currentStatus?.name}}</span>
+                                            </h4>
+                                        </div>
+ 
+ 
+ 
                                         <h4>
                                             Select Application status
                                         </h4>
@@ -222,7 +231,7 @@
                                         </div>
                                         <div class="mt-2">
 
-                                            <button class="btn btn-primary">Update Application Status</button>
+                                            <!-- <button class="btn btn-primary">Update Application Status</button> -->
                                         </div>
                                         
     

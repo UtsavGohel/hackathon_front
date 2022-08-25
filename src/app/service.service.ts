@@ -95,9 +95,24 @@ export class ServiceService {
     return this.http.get('http://localhost:3000/getJobRecruiterOfCandidate/'+ userId);
   }
 
-  updateStatus(id:any,canid:any){
-    return this.http.patch('http://localhost:3000/updateStatus/'+canid,id)
+  // updateStatus(id:any,canid:any){
+  //   return this.http.patch('http://localhost:3000/updateStatus/'+canid,id)
+  // }
+ 
+  updateStatus(statusId:any, applicationId:any){
+    const data ={
+      statusId: parseInt(statusId),
+      applicationId: parseInt(applicationId)
+    }
+    return this.http.patch('http://localhost:3000/updateStatus', data)
   }
+   getApplicationDetails(appId:any){
+    return this.http.get('http://localhost:3000/getApplicationDetails/'+ appId)
+  }
+   getStatusName(){
+    return this.http.get('http://localhost:3000/getStatusName')
+  }
+  
  
  
 }

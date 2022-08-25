@@ -48,11 +48,14 @@ export class AppliedCandidateComponent implements OnInit {
 
   }
 
-  userProfile(){
-    this.router.navigate(['user-profile-by-recruiter',{candidateId:this.candidateId}])
-  }
+  // userProfile(){
+  //   this.router.navigate(['user-profile-by-recruiter',{candidateId:this.candidateId}])
+  // }
   sendMessage(){
     this.router.navigate(['message'])
   }
-  
+  userProfile(candidateId:any, applicationId:any){
+    this.router.navigate(['user-profile-by-recruiter',{candidateId: candidateId, applicationId: applicationId}])
+  }
+ 
 }
