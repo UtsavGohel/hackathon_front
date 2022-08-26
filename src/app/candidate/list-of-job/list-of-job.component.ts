@@ -15,6 +15,7 @@ export class ListOfJobComponent implements OnInit {
   userid:any;
   userName:any;
   userdata:any;
+  term:any;
   public job_id:any
   public userId:any  = localStorage.getItem('user_id')
   public CollegeList:any

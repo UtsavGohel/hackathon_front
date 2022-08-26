@@ -36,7 +36,7 @@ import { LogoutAdminComponent } from './admin/logout-admin/logout-admin.componen
 import { UserProfileByRecComponent } from './Recruiter/user-profile-by-rec/user-profile-by-rec.component';
 import { UserMessageComponent } from './candidate/user-message/user-message.component';
 import { AddProffesorDataComponent } from './Recruiter/add-proffesor-data/add-proffesor-data.component'; // <-- import the module
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -81,7 +81,8 @@ import { AddProffesorDataComponent } from './Recruiter/add-proffesor-data/add-pr
     ReactiveFormsModule,
     HttpClientModule, 
     NgToastModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

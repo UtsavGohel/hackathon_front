@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
 
   form: FormGroup;
   formLoginAdmin: FormGroup;
-  formTempCand : FormGroup
+  // formTempCand : FormGroup
   formLoginCandidate: FormGroup;
   formLoginRecruiter: FormGroup;
   CollegeList: any;
@@ -78,8 +78,8 @@ export class HomePageComponent implements OnInit {
       
     })
     this.formLoginCandidate = new FormGroup({
-      email:new FormControl('user@gmail.com'),
-      password:new FormControl('1')
+      email:new FormControl('utsavgohel2002@gmail.com'),
+      password:new FormControl('utsav')
     })
     this.formLoginRecruiter = new FormGroup({
       email:new FormControl('utsavgohel2002@gmail.com'),

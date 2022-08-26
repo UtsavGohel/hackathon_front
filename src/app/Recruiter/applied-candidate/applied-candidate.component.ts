@@ -35,9 +35,12 @@ export class AppliedCandidateComponent implements OnInit {
         });
       })
     }else{
-
+      console.log("hello");
+      
       this.httpService.getCandidateList(this.userId).subscribe((res:any)=>{
         this.candidateList = res;
+        console.log(res);
+        
         this.candidateList.forEach((element:any) => {
           this.httpService.getStatusById(element.statusId).subscribe((res:any)=>{          
             element['status'] = res.name;

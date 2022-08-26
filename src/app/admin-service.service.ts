@@ -40,6 +40,7 @@ updateRecDetailsAdmin(data: any){
 
 
 onLogout(){
+  // localStorage.clear()
   this.router.navigate([''])
 }
 getRecruiterData(){

@@ -33,6 +33,7 @@ export class CandidateDashboardComponent implements OnInit {
   }
   
   onLogOut(){
+    // localStorage.clear()
     localStorage.removeItem("user_id");    
     this.toast.success({detail:"Logout Succesful",summary:"",duration:5000})
     setTimeout(() => {      

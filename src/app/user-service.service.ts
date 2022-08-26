@@ -55,6 +55,7 @@ export class UserServiceService {
     })
   }
   onLogout(){
+    // localStorage.clear()
     this.router.navigate(['']).then(() => {
       window.location.reload()
     })

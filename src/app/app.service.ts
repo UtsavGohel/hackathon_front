@@ -43,6 +43,7 @@ export class AppService {
   })
 }
   onLogout() {
+    // localStorage.clear()
     this.router.navigate(['homepage']).then(() => {
       window.location.reload()
     })
